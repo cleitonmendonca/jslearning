@@ -41,11 +41,11 @@
 </body>
 
 <script>
-  var numeroAleatorio = Math.floor(Math.random()) + 1;
-
+  var numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+  
   var palpites = document.querySelector('.palpites');
   var ultimoResultado = document.querySelector('.ultimoResultado');
-  var baixoOuAlto = document.querySelector('baixoOuAlto');
+  var baixoOuAlto = document.querySelector('.baixoOuAlto');
 
   var envioPalpite = document.querySelector('.envioPalpite');
   var campoPalpite = document.querySelector('.campoPalpite');
@@ -83,7 +83,7 @@
     campoPalpite.value = '';
     campoPalpite.focus();
   }
-  envioPalpite.addeventListener('click', conferirPalpite);
+  envioPalpite.addEventListener('click', conferirPalpite);
   
   function configFimDeJogo() {
 	  campoPalpite.disabled = true;
@@ -91,7 +91,7 @@
 	  botaoReinicio = document.createElement('button');
 	  botaoReinicio.textContent = 'Iniciar novo jogo';
 	  document.body.appendChild(botaoReinicio);
-	  botaoReinicio.addeventListener('click', reiniciarJogo);
+	  botaoReinicio.addEventListener('click', reiniciarJogo);
   }
   
   function reiniciarJogo() {
@@ -108,9 +108,9 @@
 	  campoPalpite.value = '';
 	  campoPalpite.focus();
 	
-	  ultimoResultado.style.backgroundColor = 'white';
-	
-	  numeroAleatorio = Math.floor(Math.random()) + 1;
+      ultimoResultado.style.backgroundColor = 'white';
+      
+      numeroAleatorio = Math.floor(Math.random() * 100) + 1;
   }
 </script>
 </html>
