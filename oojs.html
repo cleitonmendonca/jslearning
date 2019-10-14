@@ -20,13 +20,29 @@
             this.gender = gender;
             this.interests = interests;
             this.bio = function() {
-                alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+                var interestsString = '';
+                if(this.gender.toLowerCase() === 'male' || this.gender.toLowerCase() === 'm')
+                    interestsString += 'He likes ';
+                else if(this.gender.toLowerCase() === 'female' || this.gender.toLowerCase() === 'f')
+                    interestsString += 'She likes ';
+                else
+                    interestsString += 'They like ';
+                    
+                for (let i = 0; i < interests.length; i++) {
+                    if(i !== interests.length - 2)
+                        interestsString += interests[i] + ', ';
+                    else 
+                        interestsString += interests[i] + ' and ';
+                 }
+                alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. ' + interestsString.substring(0, interestsString.length - 2) + '.');
             };
             this.greeting = function (){
-                alert('Hi! I\'m ' + this.name.last + '.');
+                alert('Hi! I\'m ' + this.name.first + '.');
             };
         }
 
-        var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+        var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing', 'jazz']);
+        var person2 = new Person('Eva', 'Smith', 30, 'female', ['music']);
+        var person3 = new Person('Samantha', 'Smith', 32, 'female', ['music', 'ciclying', 'dancing', 'soccer', 'swimming']);        
     </script>
 </html>
