@@ -44,5 +44,11 @@
         var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing', 'jazz']);
         var person2 = new Person('Eva', 'Smith', 30, 'female', ['music']);
         var person3 = new Person('Samantha', 'Smith', 32, 'female', ['music', 'ciclying', 'dancing', 'soccer', 'swimming']);        
+
+        Person.prototype.farewell = function(){
+            alert(this.name.first + ' has left the building. Bye for now!');
+        };
+        //https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript/Objetos/Object_prototypes
+        
     </script>
 </html>
