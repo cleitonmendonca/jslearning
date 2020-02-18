@@ -1,6 +1,4 @@
-(function(){
-	function init(){
-		function binaryToDecimal(binary){
+function binaryToDecimal(binary){
 			var decimal = 0;
 			for (var index = binary.length - 1; index >= 0; index--) {
 				decimal += parseInt(binary[index] * Math.pow(2, (binary.length-1) - index));
@@ -25,13 +23,3 @@
 				return number * fatorial(number - 1);
 			}
 		}
-
-		console.log(binaryToDecimal("1010101"));	
-
-		console.log(decimalToBinary(256));
-		console.log(fatorial(21));
-		console.log(fatorial(15));
-	}
-
-	window.addEventListener('load', init, false);
-}());
