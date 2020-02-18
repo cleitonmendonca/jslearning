@@ -7,8 +7,18 @@
 			}
 			return decimal;
 		}
+		function decimalToBinary(decimal){
+			var binary = "";
+			while(decimal > 0){
+				binary = decimal%2 + binary;				
+				decimal = Math.floor(decimal/2);
+			}
+			return binary;
+		}
 
 		console.log(binaryToDecimal("1010101"));	
+
+		console.log(decimalToBinary(256));
 	}
 
 	window.addEventListener('load', init, false);
