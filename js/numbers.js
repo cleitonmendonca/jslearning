@@ -31,12 +31,13 @@ function validateBinary(binary){
 
 function applyConvertion(data){
 	document.getElementById('validationCustomDecimalNumber').value = null;
-	console.log(data);
+	
 	if (validateBinary(data) === true) {
 		var result = binaryToDecimal(data);
 		document.getElementById("validationCustomDecimalNumber").value = result;
+		document.getElementsByClassName("invalid-feedback").hiden = true;
 	}else{
-		document.getElementsByName("valid-feedback").attr = "hidden";
-		document.getElementsByClassName("invalid-feedback").innerHTML = "Please choose a binary number";
+		document.getElementsByClassName("invalid-feedback").innerHTML = "Please choose a binary number";\		
+		console.log(document.getElementsByClassName("valid-feedback"));
 	}
 }
